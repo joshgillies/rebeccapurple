@@ -1,7 +1,7 @@
 {
   "name": "rebeccapurple",
   "version": "0.0.0",
-  "description": "Simple JavaScript module for transforming the named color rebeccapurple to rgb",
+  "description": "Simple JavaScript module for transforming the W3C CSS rebeccapurple color to rgb.",
   "main": "index.js",
   "scripts": {
     "test": "standard && tape test.js"
