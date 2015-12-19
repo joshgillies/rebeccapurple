@@ -1,5 +1,3 @@
-var color = require('color')
-
 var COLORS = {
   'hex': '#663399',
   'hsl': 'hsl(270, 50%, 40%)',

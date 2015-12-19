@@ -24,9 +24,7 @@
     "url": "https://github.com/joshgillies/rebeccapurple/issues"
   },
   "homepage": "https://github.com/joshgillies/rebeccapurple#readme",
-  "dependencies": {
-    "color": "^0.10.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "standard": "^5.4.1",
     "tape": "^4.2.2"
