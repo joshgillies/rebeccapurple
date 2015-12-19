@@ -7,6 +7,16 @@ test('basic conversion', function (assert) {
   assert.end()
 })
 
+test('handle unknown color values', function (assert) {
+  var test = 'color: rebeccapurple'
+  try {
+    rebeccapurple(test, 'rgba')
+  } catch (err) {
+    assert.ok(err, 'throw not implemented error')
+  }
+  assert.end()
+})
+
 test('specified output conversion', function (assert) {
   var test = 'color: rebeccapurple'
   assert.equal(rebeccapurple(test, 'hex'), 'color: #663399', 'outputs hex color')

@@ -18,7 +18,7 @@ module.exports = function rebeccapurple (string, output) {
   if (output in COLORS) {
     value = COLORS[output]
   } else {
-    value = color('rebeccapurple')[output + 'String']()
+    throw new Error('color "' + output + '" not implemented')
   }
   return string.replace(/(rebeccapurple)\b/gi, value)
 }
