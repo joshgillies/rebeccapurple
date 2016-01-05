@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "prepublish": "babel src --out-dir lib",
-    "test": "standard && babel-tape-runner test.js"
+    "pretest": "standard",
+    "test": "tape -r babel-register test.js"
   },
   "babel": {
     "presets": [
@@ -39,8 +40,8 @@
     "babel-core": "^6.3.21",
     "babel-plugin-add-module-exports": "^0.1.2",
     "babel-preset-es2015": "^6.3.13",
-    "babel-tape-runner": "^2.0.0",
+    "babel-register": "^6.3.13",
     "standard": "^5.4.1",
-    "tape": "^4.2.2"
+    "tape": "^4.4.0"
   }
 }
