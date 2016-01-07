@@ -1,10 +1,19 @@
 import test from 'tape'
 import rebeccapurple from './src'
 
-const basic = 'color: rebeccapurple'
+const conditions = [
+  'color: rebeccapurple',
+  'background-color: rebeccapurple',
+  'background-color: red'
+]
+const basic = conditions[0]
+const multi = `${conditions[0]}; ${conditions[1]}`
+const mixed = `${conditions[0]}; ${conditions[2]}`
 
-test('basic conversion', (assert) => {
-  assert.equal(rebeccapurple(basic), 'color: rgb(102, 51, 153)')
+test('conversion cases', (assert) => {
+  assert.equal(rebeccapurple(basic), 'color: rgb(102, 51, 153)', 'basic')
+  assert.equal(rebeccapurple(multi), 'color: rgb(102, 51, 153); background-color: rgb(102, 51, 153)', 'multiple instances')
+  assert.equal(rebeccapurple(mixed), 'color: rgb(102, 51, 153); background-color: red', 'mixed')
   assert.end()
 })
 
@@ -13,6 +22,7 @@ test('handle unknown color values', (assert) => {
     rebeccapurple(basic, 'rgba')
   } catch (err) {
     assert.ok(err, 'throw not implemented error')
+    assert.equals(err.message, 'color "rgba" not implemented', 'error message')
   }
   assert.end()
 })
